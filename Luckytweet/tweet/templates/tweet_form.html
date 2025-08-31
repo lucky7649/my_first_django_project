@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+
+{% block title %}
+    Home - Lucky Tweets
+{% endblock %}
+
+{% block content %}
+<h1>welcome to Lucky tweet project !</h1>
+<h2>
+    {% if form.instance.pk %}
+        Edit Tweet
+    {% else %}
+        Create Tweet
+    {% endif %}
+
+    <form method="post" enctype="multipart/form-data" class="form">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-primary">
+            {% if form.instance.pk %}
+                Update
+            {% else %}
+                Create
+            {% endif %}
+        </button>
+        <a href="{% url 'tweet_list' %}">Back to list</a>
+    </form>
+</h2>
+{% endblock %}

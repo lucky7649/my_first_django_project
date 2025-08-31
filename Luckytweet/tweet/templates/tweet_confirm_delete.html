@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+
+
+{% block title %}
+    Home - Lucky Tweets
+{% endblock %}
+
+{% block content %}
+<h1>are you sure you want to delete the the tweet ......</h1>
+<form method="post">
+    <button class="btn btn-danger">Delete</button>
+    <a class="btn btn-success" href="{% url 'tweet_list' %}">Cancel</a> 
+    {% csrf_token %}
+</form>
+{% endblock %}

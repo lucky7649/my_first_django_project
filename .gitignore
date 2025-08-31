@@ -11,6 +11,8 @@ env/
 
 # Django stuff
 db.sqlite3
+/media/
+staticfiles/
 
 
 # VS Code / PyCharm
